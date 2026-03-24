@@ -1,0 +1,793 @@
+<!-- CLIENT DELIVERY: Open this file in any web browser. All navigation links work. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAADOklEQVR4nO3aT2sdVRjH8d9z5szcuTc2SSP4JsSF2I0rF4qL7KsFoy5FEcHShYgaLA1uXAoulbYI6jvwBRSs2I2vw2LS6f0zc/64SBRzm+Te1hoz+v0s7z3zcOA885vhzJEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB6Juec/+05AAD+UX9EfT7wqHXs8U0Jp2mZRTezhevrHs90cFr+esdvXtk69N/m5UsPjF1UjwToiZxzNjN72LhflAL+700Lp2l+8Xd+vC6VpqbZ09q5VX3w7OsPXZMEOOOOu+O3b9+Qr53a2Mr7QopJqYsaOK8Pn3vz0NiTUoB3gDPuqMX79M5NjdNMnZOiy+oUNLOkrsgK3vT5L98uXZ9HwBk3nwBXf76p6LOqlYG63KlwTlKSzJScqc1RFmdH1jiqmUiAHnjl6tuSpJ2fvlGbWiVLqkcDhdDJUpal/R5xvlBypknqtH37q6VqkwA98N0nX0qSitKpsFKTdqrksgpzcjErpazsk1zhpbKQzLTEFoAkEqBXmkmjwaBU4Z2mk/sall5V4eXNyVJWCEEhBEWTokk7d24srEkC9EgIQTFG1WWlnKNySnLJqTKvbEmTFBUUD+5+JxcWbxnQAD3y1MaT2p01imVWVZeaTaayzqssSxWFkzeTlOWckzencol85xHQI5efvijvC3UxKPqsaWqlSupiq5g6KSelEFSa08i8PrqwtbAmDdAz3bTVynCkpmm0tnFecqZqWClqP+6Hg1rj3fva+3X30HXHbQbRAGfc/MKtDs9pfPeeRsVI03sTtTEpZCll06xtlULU+fV1ffbCW5Kkl9+9eGJ9GqAnXnxnfyGvPPOq1gYrqoNXlSsNy6Hu/rYn70ttrK5r2kw03R3/ed0PX3x/4lYw3wJ64KjvAddufS2VJleVaqZj1XUtp0KxS9q+8NqhsTRAjy36DHzt1nXVT6wohKBuNtPHz7/xwBga4D/gUY99LToPwDtAT9iB+d8339/SS+9dWjj+uAYiAXpsflGXOQMIAAAAAPhf+x1jZzJFyvkLIwAAAABJRU5ErkJggg==">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@300;400;500;700&display=swap" rel="stylesheet">
+<title>Sample Authority Audit Report — Verdant Web Solutions</title>
+<style>
+:root {
+  --black:      #080809;
+  --near-black: #0f1012;
+  --ink:        #1a1c1e;
+  --ink-mid:    #444648;
+  --ink-light:  #6b7070;
+  --rule:       #e2e4e3;
+  --bg-soft:    #f7f8f7;
+  --bg-card:    #f0f2f1;
+  --accent:     #7dcea0;
+  --accent-dark:#2d6b4a;
+  --accent-deep:#1A5840;
+  /* replaced red with deep green, amber with mid-gray-green */
+  --red:        #1A5840;
+  --red-light:  #e8f3ee;
+  --amber:      #3d6b52;
+  --amber-light:#edf2ef;
+  --gray-tag:   #e8eae9;
+  --white:      #ffffff;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Syne', Arial, sans-serif; font-size: 10.5pt; color: var(--ink); background: #eceeed; line-height: 1.6; }
+.page { width: 780px; margin: 0 auto; background: white; }
+
+/* COVER */
+.cover { background: var(--black); padding: 52px 64px 44px; position: relative; overflow: hidden; }
+.cover-eyebrow { font-size: 7.5pt; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 16px; }
+.cover-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 38pt; font-weight: 300; color: var(--white); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 6px; }
+.cover-business { font-size: 13pt; color: rgba(255,255,255,0.55); margin-bottom: 36px; }
+.cover-meta-row { display: flex; flex-direction: column; gap: 0; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 22px; }
+.cover-meta-item { display: flex; align-items: baseline; gap: 16px; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.cover-meta-item:last-child { border-bottom: none; }
+.cover-meta-item label { font-size: 7pt; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); width: 90px; flex-shrink: 0; }
+.cover-meta-item span { font-size: 10.5pt; color: var(--white); font-weight: 600; }
+
+/* JUMP NAV */
+.jump-nav {
+  background: var(--near-black);
+  padding: 20px 36px;
+}
+.jump-nav-label {
+  font-size: 7.5pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 12px;
+  display: block;
+}
+.jump-nav-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.jump-nav-row:last-child { margin-bottom: 0; }
+.jump-nav-row a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  background: rgba(125,206,160,0.07);
+  border: 1px solid rgba(125,206,160,0.22);
+  border-radius: 4px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 9pt;
+  font-weight: 700;
+  color: rgba(255,255,255,0.92);
+  letter-spacing: 0.01em;
+  box-shadow: 0 0 8px rgba(125,206,160,0.18), 0 2px 12px rgba(125,206,160,0.10);
+}
+
+/* BODY */
+.body-content { padding: 0 64px 64px; }
+.section { padding-top: 44px; }
+.section-header { display: flex; align-items: baseline; gap: 12px; border-bottom: 2px solid var(--accent-deep); padding-bottom: 8px; margin-bottom: 22px; }
+.section-num { font-family: 'Syne', Arial, sans-serif; font-size: 12pt; font-weight: 700; color: var(--accent); letter-spacing: 0.14em; text-transform: uppercase; }
+.section-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22pt; font-weight: 300; color: var(--accent-deep); line-height: 1.1; letter-spacing: -0.02em; }
+.back-btn { display: inline-block; margin-bottom: 18px; padding: 5px 12px; background: var(--bg-card); color: var(--accent-dark); border-radius: 3px; font-size: 7.5pt; font-weight: 700; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; border: 1px solid var(--rule); }
+
+/* SUMMARY GRID — 2x2 */
+.summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 24px; }
+.summary-card { background: var(--bg-soft); border: 1px solid var(--rule); border-radius: 6px; padding: 20px 22px; border-left: 4px solid var(--ink-light); }
+.summary-card.urgent { border-left-color: var(--accent-deep); }
+.summary-card.warn   { border-left-color: var(--accent-dark); }
+.summary-card.good   { border-left-color: var(--accent-dark); }
+.summary-card .card-label { font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-light); font-weight: 700; margin-bottom: 8px; }
+.summary-card .big { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 38pt; font-weight: 300; line-height: 1; margin-bottom: 6px; color: var(--ink); letter-spacing: -0.02em; }
+.summary-card.urgent .big { color: var(--accent-deep); }
+.summary-card.warn   .big { color: var(--accent-dark); }
+.summary-card.good   .big { color: var(--accent-dark); }
+.summary-card .card-detail { font-size: 8.5pt; color: var(--ink-mid); line-height: 1.45; }
+
+/* CANONICAL */
+.canonical-box { background: var(--accent-deep); border-radius: 6px; padding: 20px 24px; color: white; margin-bottom: 24px; }
+.canonical-box h4 { font-size: 7pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; font-weight: 700; }
+.canonical-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 32px; }
+.canonical-item label { display: block; font-size: 7pt; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 2px; }
+.canonical-item span { font-size: 10pt; color: white; font-weight: 600; }
+.canonical-warning { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.12); font-size: 8.5pt; color: rgba(255,255,255,0.55); line-height: 1.5; }
+
+/* ALERTS */
+.alert { border-radius: 5px; padding: 12px 16px; margin-bottom: 14px; display: flex; align-items: flex-start; gap: 12px; border-left: 4px solid transparent; }
+.alert.red   { background: var(--red-light);   border-color: var(--red);         }
+.alert.amber { background: var(--amber-light); border-color: var(--amber);       }
+.alert.green { background: #eaf5ee;            border-color: var(--accent-dark); }
+.alert-icon  { font-size: 11pt; flex-shrink: 0; margin-top: 1px; }
+.alert-body  { flex: 1; }
+.alert-title { font-weight: 700; font-size: 9.5pt; margin-bottom: 2px; }
+.alert.red   .alert-title { color: var(--accent-deep); }
+.alert.amber .alert-title { color: var(--accent-dark); }
+.alert.green .alert-title { color: var(--accent-dark); }
+.alert-text  { font-size: 9pt; color: var(--ink-mid); line-height: 1.5; }
+
+/* TABLES */
+table { width: 100%; border-collapse: collapse; font-size: 8.5pt; margin-bottom: 22px; }
+thead tr { background: var(--near-black); color: white; }
+thead th { padding: 9px 11px; text-align: left; font-size: 7pt; letter-spacing: 0.09em; text-transform: uppercase; font-weight: 700; }
+tbody tr { border-bottom: 1px solid var(--rule); }
+tbody tr:nth-child(even) { background: var(--bg-soft); }
+tbody td { padding: 8px 11px; vertical-align: top; }
+.tag { display: inline-block; padding: 2px 7px; border-radius: 3px; font-size: 7pt; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+.tag-red   { background: var(--red-light);   color: var(--accent-deep); }
+.tag-green { background: #eaf5ee;            color: var(--accent-dark); }
+.tag-amber { background: var(--amber-light); color: var(--accent-dark); }
+.tag-gray  { background: var(--gray-tag);    color: var(--ink-light);   }
+
+/* CHECKLIST */
+.checklist { list-style: none; }
+.checklist-item { display: flex; align-items: flex-start; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+.checklist-item:last-child { border-bottom: none; }
+.check-box { width: 20px; height: 20px; border-radius: 4px; border: 2px solid #ccc; flex-shrink: 0; margin-top: 2px; background: white; }
+.check-content { flex: 1; }
+.priority-pill { display: inline-block; padding: 2px 9px; border-radius: 10px; font-size: 6.5pt; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 5px; }
+.pill-high   { background: var(--red-light);   color: var(--red);       }
+.pill-medium { background: var(--amber-light); color: var(--amber);     }
+.pill-low    { background: var(--bg-card);     color: var(--ink-light); }
+.check-title { font-weight: 700; font-size: 10pt; margin-bottom: 4px; color: var(--ink); }
+.check-desc  { font-size: 9pt; color: var(--ink-mid); line-height: 1.5; margin-bottom: 5px; }
+.check-url   { font-size: 8pt; color: var(--accent-dark); font-weight: 600; word-break: break-all; }
+
+/* FINDINGS */
+.finding-card { border: 1px solid var(--rule); border-radius: 7px; overflow: hidden; margin-bottom: 16px; }
+.finding-header { background: var(--near-black); color: white; padding: 10px 18px; font-size: 8pt; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; }
+.finding-header .platform { color: var(--accent); }
+.finding-body { display: grid; grid-template-columns: 1fr 1fr; }
+.finding-col { padding: 14px 18px; }
+.finding-col:first-child { border-right: 1px solid var(--rule); background: #eaf5ee; }
+.finding-col h5 { font-size: 7pt; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 10px; font-weight: 700; }
+.finding-row { margin-bottom: 7px; }
+.finding-row label { font-size: 7pt; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-light); display: block; margin-bottom: 1px; }
+.finding-row span       { font-size: 10pt; font-weight: 600; color: var(--ink); }
+.finding-row span.wrong { color: var(--red); }
+.finding-note { padding: 10px 18px; background: var(--amber-light); border-top: 1px solid #c8ddd3; font-size: 8.5pt; color: var(--accent-dark); font-style: italic; }
+
+/* PHONES */
+.phone-row { display: flex; align-items: center; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 9.5pt; }
+.phone-num   { font-weight: 700; font-size: 11pt; width: 165px; flex-shrink: 0; }
+.phone-found { color: var(--ink-mid); flex: 1; font-size: 8.5pt; }
+
+/* CODE */
+.code-block { background: #1a1c1e; border-radius: 6px; padding: 18px 22px; margin: 14px 0; }
+.code-block pre { font-family: 'Courier New', monospace; font-size: 7.5pt; color: #d4d4d4; line-height: 1.65; white-space: pre-wrap; word-break: break-word; }
+
+/* LINK ITEMS */
+.link-item { border: 1px solid var(--rule); border-radius: 5px; padding: 13px 16px; margin-bottom: 9px; background: var(--bg-soft); }
+.link-item-header { display: flex; align-items: center; gap: 9px; margin-bottom: 5px; }
+.link-item-name   { font-weight: 700; font-size: 10pt; }
+.link-item-type   { font-size: 7pt; padding: 2px 7px; background: var(--gray-tag); color: var(--ink-light); border-radius: 3px; text-transform: uppercase; letter-spacing: 0.05em; }
+.link-item-desc   { font-size: 9pt; color: var(--ink-mid); margin-bottom: 4px; }
+.link-item-action { font-size: 8.5pt; color: var(--accent-dark); font-weight: 600; }
+
+/* STATUS */
+.s-match   { color: var(--accent-dark); font-weight: 600; }
+.s-issues  { color: var(--accent-deep); font-weight: 600; }
+.s-missing { color: var(--ink-light);   font-weight: 600; }
+.s-partial { color: var(--amber);       font-weight: 600; }
+
+.disclaimer {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--rule);
+  padding: 18px 64px;
+  font-size: 7.5pt;
+  color: var(--ink-light);
+  line-height: 1.6;
+}
+.disclaimer strong { color: var(--ink-mid); font-size: 7.5pt; }
+
+/* FOOTER */
+.report-footer { background: var(--black); padding: 20px 64px; display: flex; align-items: center; justify-content: space-between; margin-top: 48px; }
+.footer-brand { color: white; font-size: 9.5pt; font-weight: 700; }
+.footer-brand span { color: var(--accent); }
+.footer-note { font-size: 9pt; color: var(--accent); font-weight: 500; }
+
+p { margin-bottom: 10px; color: var(--ink-mid); font-size: 9.5pt; }
+ul, ol { padding-left: 20px; margin-bottom: 14px; color: var(--ink-mid); }
+li { margin-bottom: 4px; font-size: 9pt; }
+strong { color: var(--ink); }
+a { color: var(--accent-dark); text-decoration: underline; }
+.check-url a { color: var(--accent-dark); }
+.link-item-action a { color: var(--accent-dark); }
+td a { color: var(--accent-dark); }
+
+.jump-nav-row a:active { transform: translateY(0px); filter: brightness(0.96); }
+.checklist-item {
+  transition: background .15s;
+  border-radius: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.checklist-item:hover { background: var(--bg-soft); }
+tbody tr { transition: background .12s; }
+tbody tr:hover { background: var(--bg-card) !important; }
+.link-item {
+  transition: box-shadow .2s cubic-bezier(.16,1,.3,1),
+              transform .2s cubic-bezier(.16,1,.3,1);
+}
+.link-item:hover { box-shadow: 0 2px 12px rgba(125,206,160,0.14); transform: translateY(-1px); }
+.link-item:active { transform: translateY(0px); }
+a { transition: color .15s, opacity .15s; }
+a:hover { color: var(--accent-deep); opacity: 0.85; }
+
+
+
+/* ══ BUTTONS — pixel-perfect match to verdantweb.solutions ══ */
+.jump-nav-row a {
+  background: var(--accent);
+  color: #080809;
+  border: 1px solid var(--accent);
+  border-radius: 0;
+  font-family: 'Syne', Arial, sans-serif;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color .35s cubic-bezier(.16,1,.3,1),
+              border-color .35s,
+              box-shadow .35s;
+  will-change: box-shadow, filter;
+}
+.jump-nav-row a::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(
+    circle 130px at var(--mx, 50%) var(--my, 50%),
+    rgba(255,255,255,0.60) 0%,
+    rgba(255,255,255,0.22) 40%,
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity .25s;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: screen;
+}
+/* text above shimmer */
+.jump-nav-row a { color: #080809; }
+.jump-nav-row a:hover {
+  color: #080809;
+  background: var(--accent);
+  border-color: var(--accent);
+  filter: brightness(1.1) saturate(1.1);
+  box-shadow: 0 0 0 2px rgba(125,206,160,0.25),
+              0 8px 40px rgba(125,206,160,0.22),
+              0 2px 8px rgba(125,206,160,0.15);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+.jump-nav-row a:hover::before { opacity: 1; }
+.jump-nav-row a > * { position: relative; z-index: 2; }
+.jump-nav-row a:active { transform: translateY(0); filter: brightness(0.98); }
+
+.jump-btn {
+  background: var(--accent);
+  color: #080809;
+  border: 1px solid var(--accent);
+  border-radius: 0;
+  font-family: 'Syne', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 7.5pt;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color .35s cubic-bezier(.16,1,.3,1),
+              border-color .35s,
+              box-shadow .35s;
+  will-change: box-shadow, filter;
+}
+.jump-btn::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(
+    circle 80px at var(--mx, 50%) var(--my, 50%),
+    rgba(255,255,255,0.60) 0%,
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity .25s;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: screen;
+}
+.jump-btn:hover {
+  color: #080809;
+  background: var(--accent);
+  border-color: var(--accent);
+  filter: brightness(1.1) saturate(1.1);
+  box-shadow: 0 0 0 2px rgba(125,206,160,0.25),
+              0 8px 40px rgba(125,206,160,0.22),
+              0 2px 8px rgba(125,206,160,0.15);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+.jump-btn:hover::before { opacity: 1; }
+.jump-btn > * { position: relative; z-index: 2; }
+.jump-btn:active { transform: translateY(0); filter: brightness(0.98); }
+
+.checklist-item { transition: background .15s; padding-left: 4px; padding-right: 4px; }
+.checklist-item:hover { background: var(--bg-soft); }
+tbody tr { transition: background .12s; }
+tbody tr:hover { background: var(--bg-card) !important; }
+.link-item { transition: box-shadow .25s cubic-bezier(.16,1,.3,1), transform .25s cubic-bezier(.16,1,.3,1); }
+.link-item:hover { box-shadow: 0 0 0 1px rgba(125,206,160,0.2), 0 4px 16px rgba(125,206,160,0.12); transform: translateY(-1px); }
+.link-item:active { transform: translateY(0); }
+a { transition: opacity .15s; }
+a:hover { opacity: 0.78; }
+
+
+/* dot grid host elements need position:relative */
+.cover, .jump-nav {
+  position: relative;
+  overflow: hidden;
+}
+.dot-canvas {
+  position: absolute;
+  top: 0; left: 0;
+  pointer-events: none;
+  display: block;
+  z-index: 0;
+  opacity: 0.6;
+}
+/* all cover/nav children sit above the canvas */
+.cover > *:not(.dot-canvas),
+.jump-nav > *:not(.dot-canvas) {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ── SAMPLE BLUR REDACTIONS ── */
+.blur-box {
+  display: inline-block;
+  filter: blur(5px);
+  user-select: none;
+  pointer-events: none;
+  background: rgba(125,206,160,0.12);
+  border-radius: 2px;
+  padding: 0 2px;
+}
+.blur-line {
+  display: inline-block;
+  filter: blur(5px);
+  user-select: none;
+  pointer-events: none;
+  background: rgba(255,255,255,0.08);
+  border-radius: 2px;
+  min-width: 120px;
+  height: 1em;
+  vertical-align: middle;
+}
+
+</style>
+</head>
+<body>
+<div style="background:#7dcea0;color:#080809;text-align:center;padding:10px 20px;font-family:'Syne',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;position:sticky;top:0;z-index:9999;">
+  Sample Report — Client information has been replaced with placeholder data
+</div>
+<div class="page">
+
+<div class="cover">
+<canvas class="dot-canvas"></canvas>
+  <div class="cover-eyebrow">Verdant Web Solutions, LLC </div>
+  <div class="cover-title">Authority<br>Audit Report</div>
+  <div class="cover-business"><span class="blur-box">Summit Home Services LLC</span> &nbsp;·&nbsp; Riverside, CA</div>
+  <div class="cover-meta-row">
+    <div class="cover-meta-item"><label>Address</label><span><span class="blur-box">1240 Birch Ave, Suite 12, Riverside, CA 92501</span></span></div>
+    <div class="cover-meta-item"><label>Phone</label><span><span class="blur-box">(555) 847-2201</span></span></div>
+    <div class="cover-meta-item"><label>Website</label><span><span class="blur-box">summithomeservices.com</span></span></div>
+    <div class="cover-meta-item"><label>Report Date</label><span>March 2026</span></div>
+  </div>
+</div>
+
+<div class="jump-nav">
+<canvas class="dot-canvas"></canvas>
+  <span class="jump-nav-label">Jump to section</span>
+  <div class="jump-nav-row">
+    <a href="#summary">01 Summary</a>
+    <a href="#fixlist">10 Fix Checklist</a>
+    <a href="#findings">02 Key Findings</a>
+    <a href="#directories">03 Directories</a>
+    <a href="#phones">04 Phone</a>
+  </div>
+  <div class="jump-nav-row">
+    <a href="#website">05 Website</a>
+    <a href="#schema">06 Schema</a>
+    <a href="#competitors">07 Competitors</a>
+    <a href="#citations">08 Citations</a>
+    <a href="#links">09 Local Links</a>
+  </div>
+</div>
+
+<div class="body-content">
+
+<!-- 01 SUMMARY -->
+<div class="section" id="summary">
+  <div class="section-header"><span class="section-num">01</span><h2 class="section-title">What This Report Found</h2></div>
+
+  <div class="summary-grid">
+    <div class="summary-card urgent">
+      <div class="card-label">Total Fixes Required</div>
+      <div class="big">14</div>
+      <div class="card-detail">Items across directories, your website, and missing listings that need to be resolved to improve AI recommendations.</div>
+    </div>
+    <div class="summary-card warn">
+      <div class="card-label">High Priority Fixes</div>
+      <div class="big">7</div>
+      <div class="card-detail">Direct impact on whether AI tools recommend your business. Start here — the rest can follow.</div>
+    </div>
+    <div class="summary-card urgent">
+      <div class="card-label">Wrong Phone Numbers Online</div>
+      <div class="big">3</div>
+      <div class="card-detail">Three different incorrect numbers found across your website, YellowPages, and Manta. All need to be corrected to <span class="blur-box">(555) 847-2201</span>.</div>
+    </div>
+    <div class="summary-card warn">
+      <div class="card-label">Directories Missing NAP</div>
+      <div class="big">2</div>
+      <div class="card-detail">Yelp has no address listed. Facebook has no phone or address. Both are actively crawled by AI recommendation tools.</div>
+    </div>
+  </div>
+
+  <div class="alert red"><span class="alert-icon">⚠</span><div class="alert-body"><div class="alert-title">No schema found on your website</div><div class="alert-text">Schema is the invisible code that tells AI tools exactly who you are and where you are. Without it, ChatGPT, Google, and Siri have to piece your business together from conflicting directory data — and a competitor with clean schema wins by default. Fix #5 in the checklist covers this with a ready-to-paste code block.</div></div></div>
+
+  <div class="alert amber"><span class="alert-icon">⚠</span><div class="alert-body"><div class="alert-title">Four different phone numbers are circulating online</div><div class="alert-text">Your website homepage shows <span class="blur-box">(555) 847-9079</span>. YellowPages shows <span class="blur-box">(555) 209-7848</span>. Manta shows <span class="blur-box">(555) 944-1118</span>. Only <span class="blur-box">(555) 847-2201</span> is correct. AI tools that find multiple conflicting phone numbers for the same business treat that as a trust problem and stop recommending it.</div></div></div>
+
+  <div class="alert green"><span class="alert-icon">✓</span><div class="alert-body"><div class="alert-title">Nextdoor Neighborhood Favorite — 2022, 2023, 2024</div><div class="alert-text">Your community reputation is strong. The fixes in this report will make sure the rest of the web reflects that same credibility to AI tools.</div></div></div>
+
+  <div class="canonical-box">
+    <h4>Your canonical NAP — use this on every listing, exactly as written</h4>
+    <div class="canonical-grid">
+      <div class="canonical-item"><label>Business Name</label><span><span class="blur-box">Summit Home Services LLC</span></span></div>
+      <div class="canonical-item"><label>Phone</label><span><span class="blur-box">(555) 847-2201</span></span></div>
+      <div class="canonical-item"><label>Address</label><span><span class="blur-box">1240 Birch Ave, Suite 12, <span class="blur-box">Riverside, CA 92501</span></span></span></div>
+      <div class="canonical-item"><label>Website</label><span><span class="blur-box">summithomeservices.com</span></span></div>
+    </div>
+    <div class="canonical-warning">Copy and paste this data exactly — do not retype or abbreviate. A listing that says "W" instead of "E", or drops a comma, creates a new mismatch that AI tools will flag.</div>
+  </div>
+</div>
+
+<!-- 02 KEY FINDINGS -->
+<div class="section" id="findings">
+  <div class="section-header"><span class="section-num">02</span><h2 class="section-title">Key Findings</h2></div>
+  <a class="back-btn" href="#fixlist">↓ Jump to Fix Checklist</a>
+
+  <div class="finding-card"><div class="finding-header">Finding 1 — <span class="platform">BBB Address Mismatch</span></div><div class="finding-body"><div class="finding-col"><h5>Your Google Business Profile</h5><div class="finding-row"><label>Address</label><span><span class="blur-box">1240 Birch Ave, Suite 12, <span class="blur-box">Riverside, CA 92501</span></span></span></div></div><div class="finding-col"><h5>Your BBB Listing</h5><div class="finding-row"><label>Address</label><span class="wrong"><span class="blur-box">1240 Birch Ave Suite 21</span>, <span class="blur-box">Riverside, CA 92501</span></span></div></div></div><div class="finding-note">BBB is one of the first platforms AI tools use to verify a local business. A wrong street direction tells those tools the address doesn't match — which reduces trust across the whole listing.</div></div>
+
+  <div class="finding-card"><div class="finding-header">Finding 2 — <span class="platform">Website Phone Mismatch</span></div><div class="finding-body"><div class="finding-col"><h5>Your Google Business Profile</h5><div class="finding-row"><label>Phone</label><span><span class="blur-box">(555) 847-2201</span></span></div></div><div class="finding-col"><h5>Website (homepage &amp; contact)</h5><div class="finding-row"><label>Phone</label><span class="wrong"><span class="blur-box">(555) 847-9079</span></span></div></div></div><div class="finding-note">When an AI recommendation leads someone to your website and the phone number is different, that triggers a mismatch flag. The About page already has the correct number — this is a partial update that was never completed sitewide.</div></div>
+
+  <div class="finding-card"><div class="finding-header">Finding 3 — <span class="platform">YellowPages Phone Mismatch</span></div><div class="finding-body"><div class="finding-col"><h5>Your Google Business Profile</h5><div class="finding-row"><label>Phone</label><span><span class="blur-box">(555) 847-2201</span></span></div></div><div class="finding-col"><h5>YellowPages Listing</h5><div class="finding-row"><label>Phone</label><span class="wrong"><span class="blur-box">(555) 209-7848</span></span></div></div></div><div class="finding-note">YellowPages feeds Data Axle, which automatically distributes your NAP to Apple Maps, Bing, and dozens of secondary directories. A wrong phone here spreads to platforms that are very difficult to correct directly.</div></div>
+
+  <div class="finding-card"><div class="finding-header">Finding 4 — <span class="platform">Manta Phone Mismatch</span></div><div class="finding-body"><div class="finding-col"><h5>Your Google Business Profile</h5><div class="finding-row"><label>Phone</label><span><span class="blur-box">(555) 847-2201</span></span></div></div><div class="finding-col"><h5>Manta Listing</h5><div class="finding-row"><label>Phone</label><span class="wrong"><span class="blur-box">(555) 944-1118</span></span></div></div></div><div class="finding-note">A fourth phone number in circulation. AI tools that find multiple conflicting phone numbers for the same business treat the whole picture as uncertain and recommend competitors with cleaner data instead.</div></div>
+</div>
+
+<!-- 03 DIRECTORIES -->
+<div class="section" id="directories">
+  <div class="section-header"><span class="section-num">03</span><h2 class="section-title">Full Directory Table</h2></div>
+  <a class="back-btn" href="#fixlist">↓ Jump to Fix Checklist</a>
+  <table>
+    <thead><tr><th>Directory</th><th>Name</th><th>Address</th><th>Phone</th><th>Status</th><th>Priority</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Google Business Profile</strong></td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-green">✓</span></td><td>Canonical</td><td>—</td></tr>
+      <tr><td><strong>BBB</strong></td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-red">✗ W vs E</span></td><td><span class="tag tag-green">✓</span></td><td>Address wrong</td><td><span class="tag tag-red">High</span></td></tr>
+      <tr><td><strong>Website</strong></td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-red"><span class="blur-box">✗ Wrong phone</span></span></td><td>Wrong phone sitewide</td><td><span class="tag tag-red">High</span></td></tr>
+      <tr><td><strong>YellowPages</strong></td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-red"><span class="blur-box">✗ Wrong phone</span></span></td><td>Wrong phone — upstream</td><td><span class="tag tag-red">High</span></td></tr>
+      <tr><td><strong>Manta</strong></td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-red"><span class="blur-box">✗ Wrong phone</span></span></td><td>Wrong phone</td><td><span class="tag tag-red">High</span></td></tr>
+      <tr><td><strong>Yelp</strong></td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-amber">~ No address</span></td><td><span class="tag tag-green">✓</span></td><td>Address missing</td><td><span class="tag tag-amber">Medium</span></td></tr>
+      <tr><td><strong>Facebook</strong></td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-amber">~ Not listed</span></td><td><span class="tag tag-amber">~ Not listed</span></td><td>No NAP data</td><td><span class="tag tag-amber">Medium</span></td></tr>
+      <tr><td><strong>Nextdoor</strong></td><td><span class="tag tag-green">✓</span></td><td>—</td><td><span class="tag tag-green">✓</span></td><td>Match — Neighborhood Favorite</td><td>—</td></tr>
+      <tr><td><strong>BuildZoom</strong></td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-green">✓</span></td><td>Match</td><td>—</td></tr>
+      <tr><td><strong>Superpages</strong></td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-amber">~ Unconfirmed</span></td><td>Verify phone</td><td><span class="tag tag-amber">Medium</span></td></tr>
+      <tr><td><strong>Angi</strong></td><td colspan="3" style="color:#999;font-style:italic;font-size:8.5pt;">Not listed — competitor gap</td><td>Create listing</td><td><span class="tag tag-red">High</span></td></tr>
+      <tr><td><strong>Bing Places</strong></td><td colspan="3" style="color:#999;font-style:italic;font-size:8.5pt;">Could not confirm</td><td>Claim recommended</td><td><span class="tag tag-red">High</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 04 PHONES -->
+<div class="section" id="phones">
+  <div class="section-header"><span class="section-num">04</span><h2 class="section-title">Phone</h2></div>
+  <a class="back-btn" href="#fixlist">↓ Jump to Fix Checklist</a>
+  <p>Four different phone numbers are currently associated with this business online. Only one is correct.</p>
+  <div class="phone-row"><span class="phone-num"><span class="blur-box">(555) 847-2201</span></span><span class="phone-found">GBP · BBB · Yelp · Nextdoor · BuildZoom · website About page</span><span class="tag tag-green">✓ Keep</span></div>
+  <div class="phone-row"><span class="phone-num"><span class="blur-box">(555) 847-9079</span></span><span class="phone-found">Website homepage and contact page</span><span class="tag tag-red">✗ Fix</span></div>
+  <div class="phone-row"><span class="phone-num"><span class="blur-box">(555) 209-7848</span></span><span class="phone-found">YellowPages · Procore</span><span class="tag tag-red">✗ Fix</span></div>
+  <div class="phone-row"><span class="phone-num"><span class="blur-box">(555) 944-1118</span></span><span class="phone-found">Manta</span><span class="tag tag-red">✗ Fix</span></div>
+  <div class="phone-row"><span class="phone-num"><span class="blur-box">(555) 960-2182</span></span><span class="phone-found">FMCSA/DOT fleet registration</span><span class="tag tag-amber">~ Verify</span></div>
+</div>
+
+<!-- 05 WEBSITE -->
+<div class="section" id="website">
+  <div class="section-header"><span class="section-num">05</span><h2 class="section-title">Website Checks</h2></div>
+  <a class="back-btn" href="#fixlist">↓ Jump to Fix Checklist</a>
+  <table>
+    <thead><tr><th>Page</th><th>Phone</th><th>Address</th><th>tel: Link</th><th>GBP Embed</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Homepage</strong></td><td><span class="tag tag-red"><span class="blur-box">✗ Wrong phone</span></span></td><td><span class="tag tag-green">✓ Correct</span></td><td><span class="tag tag-green">✓</span></td><td>N/A</td></tr>
+      <tr><td><strong>Contact Page</strong></td><td><span class="tag tag-red"><span class="blur-box">✗ Wrong phone</span></span></td><td><span class="tag tag-green">✓ Correct</span></td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-red">✗ Missing</span></td></tr>
+      <tr><td><strong>About Page</strong></td><td><span class="tag tag-green">✓ 807-5485</span></td><td><span class="tag tag-green">✓ Correct</span></td><td><span class="tag tag-green">✓</span></td><td>N/A</td></tr>
+    </tbody>
+  </table>
+  <div class="alert amber"><span class="alert-icon">⚠</span><div class="alert-body"><div class="alert-title">Partial update — About page was corrected, homepage and contact page were not</div><div class="alert-text">This is the most common cause of sitewide phone mismatches on Hibu-built sites. Contact Hibu support and ask them to update every instance of <span class="blur-box">(555) 847-9079</span> to <span class="blur-box">(555) 847-2201</span> across all pages.</div></div></div>
+</div>
+
+<!-- 06 SCHEMA -->
+<div class="section" id="schema">
+  <div class="section-header"><span class="section-num">06</span><h2 class="section-title">Schema Assessment</h2></div>
+  <a class="back-btn" href="#fixlist">↓ Jump to Fix Checklist</a>
+  <div class="alert red"><span class="alert-icon">✕</span><div class="alert-body"><div class="alert-title">No LocalBusiness schema found on the website</div><div class="alert-text">The site is built on Hibu, which does not generate schema automatically. Copy the block below and send it to your Hibu rep with a request to add it to the homepage head tag. This is the single highest-impact technical fix in this report.</div></div></div>
+  <p><strong>Send this to your Hibu rep — ask them to add it to the homepage &lt;head&gt; tag:</strong></p>
+  <div class="code-block" style="position:relative;">
+  <div style="position:absolute;inset:0;background:rgba(0,0,0,0.01);z-index:1;"></div>
+  <pre style="filter:blur(4px);user-select:none;pointer-events:none;">&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Plumber",
+  "name": "Summit Home Services LLC",
+  "url": "https://www.summithomeservices.com",
+  "telephone": "(555) 847-2201",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1240 Birch Ave Suite 12",
+    "addressLocality": "Riverside",
+    "addressRegion": "CA",
+    "postalCode": "92501",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 33.9533,
+    "longitude": -117.3961
+  },
+  "openingHours": "Mo-Su 00:00-23:59",
+  "description": "Family-owned plumbing company serving Riverside and the Inland Empire since 2015.",
+  "areaServed": ["Riverside, CA", "Corona, CA", "Moreno Valley, CA", "Perris, CA"],
+  "priceRange": "$$",
+  "sameAs": [
+    "https://www.yelp.com/biz/summit-home-services",
+    "https://nextdoor.com/pages/summit-home-services",
+    "https://www.<span class="blur-box">facebook.com/summithomeservices</span>"
+  ]
+}
+&lt;/script&gt;</pre>
+  <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2;">
+    <div style="background:rgba(8,8,9,0.7);border:1px solid rgba(125,206,160,0.3);border-radius:6px;padding:10px 20px;font-family:'Syne',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.08em;color:#7dcea0;text-transform:uppercase;">
+      ✓ Corrected schema block included — ready to paste
+    </div>
+  </div>
+</div>
+  <div class="alert amber"><span class="alert-icon">⚠</span><div class="alert-body"><div class="alert-title">Fix BBB and YellowPages before adding their URLs to the sameAs list</div><div class="alert-text">Do not add BBB or YellowPages to the sameAs array until those listings are corrected. Linking to a page with wrong data tells AI tools that the wrong data is authoritative.</div></div></div>
+</div>
+
+<!-- 07 COMPETITORS -->
+<div class="section" id="competitors">
+  <div class="section-header"><span class="section-num">07</span><h2 class="section-title">Competitor Directory Gaps</h2></div>
+  <a class="back-btn" href="#fixlist">↓ Jump to Fix Checklist</a>
+  <p>Top 3 Map Pack competitors for "plumber Riverside Idaho": <strong>Beacon Plumbing · A-V Emergency Plumbing · Five Star Service Pros.</strong></p>
+  <table>
+    <thead><tr><th>Directory</th><th>Beacon</th><th>A-V Emergency</th><th>Five Star</th><th>Summit Home Services</th></tr></thead>
+    <tbody>
+      <tr><td>Google Business Profile</td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-green">✓</span></td></tr>
+      <tr><td>BBB</td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-amber">Issues</span></td></tr>
+      <tr><td>Yelp</td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-green">✓</span></td></tr>
+      <tr><td>Angi</td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-gray">✗</span></td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-red">✗ Missing</span></td></tr>
+      <tr><td>YellowPages</td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-gray">✗</span></td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-amber">Issues</span></td></tr>
+      <tr><td>Nextdoor</td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-gray">~</span></td><td><span class="tag tag-green">✓</span></td><td><span class="tag tag-green">✓</span></td></tr>
+    </tbody>
+  </table>
+  <div class="alert red"><span class="alert-icon">◆</span><div class="alert-body"><div class="alert-title">Angi gap — Beacon and Five Star are listed, Summit Home Services is not</div><div class="alert-text">Angi is crawled by AI tools for home service recommendations. Being absent while two top competitors are listed is a direct disadvantage for every AI recommendation query in the Riverside area. Create your listing at <a href="https://pro.angi.com">pro.angi.com</a>.</div></div></div>
+</div>
+
+<!-- 08 CITATION STATUS -->
+<div class="section" id="citations">
+  <div class="section-header"><span class="section-num">08</span><h2 class="section-title">Citation Status &amp; Building List</h2></div>
+  <a class="back-btn" href="#fixlist">↓ Jump to Fix Checklist</a>
+  <table>
+    <thead><tr><th>Directory</th><th>Status</th><th>Notes</th><th>Action</th></tr></thead>
+    <tbody>
+      <tr><td>Google Business Profile</td><td><span class="s-match">✓ Match</span></td><td>Match — Canonical source</td><td>No action</td></tr>
+      <tr><td>BBB</td><td><span class="s-issues">✗ Issues</span></td><td>Address: W vs E</td><td>Fix — checklist #2</td></tr>
+      <tr><td>Yelp</td><td><span class="s-partial">~ Incomplete</span></td><td>No address on file</td><td>Add address</td></tr>
+      <tr><td>Facebook</td><td><span class="s-partial">~ Incomplete</span></td><td>No phone or address</td><td>Add NAP</td></tr>
+      <tr><td>YellowPages</td><td><span class="s-issues">✗ Issues</span></td><td>Wrong phone: 209-7848</td><td>Fix — checklist #3</td></tr>
+      <tr><td>Manta</td><td><span class="s-issues">✗ Issues</span></td><td>Wrong phone: 944-1118</td><td>Fix — checklist #4</td></tr>
+      <tr><td>Nextdoor</td><td><span class="s-match">✓ Match</span></td><td>Neighborhood Favorite ✓</td><td>Formally claim</td></tr>
+      <tr><td>BuildZoom</td><td><span class="s-match">✓ Match</span></td><td>All fields correct</td><td>No action</td></tr>
+      <tr><td>Superpages</td><td><span class="s-partial">~ Partial</span></td><td>Phone unconfirmed</td><td>Verify phone</td></tr>
+      <tr><td>Angi</td><td><span class="s-missing">✕ Not listed</span></td><td>Competitor gap</td><td><a href="https://pro.angi.com">pro.angi.com</a></td></tr>
+      <tr><td>Bing Places</td><td><span class="s-partial">~ Unconfirmed</span></td><td>Claim recommended</td><td><a href="https://www.bingplaces.com">bingplaces.com</a></td></tr>
+      <tr><td>Apple Maps</td><td><span class="s-partial">~ Unconfirmed</span></td><td>—</td><td><a href="https://mapsconnect.apple.com">mapsconnect.apple.com</a></td></tr>
+      <tr><td>Houzz</td><td><span class="s-missing">✕ Not listed</span></td><td>—</td><td><a href="https://www.houzz.com/pro">houzz.com/pro</a></td></tr>
+      <tr><td>Thumbtack</td><td><span class="s-missing">✕ Not listed</span></td><td>—</td><td><a href="https://www.thumbtack.com/pro">thumbtack.com/pro</a></td></tr>
+      <tr><td>HomeAdvisor</td><td><span class="s-missing">✕ Not listed</span></td><td>—</td><td><a href="https://www.homeadvisor.com/c.HomeAdvisorPro">homeadvisor.com/c.HomeAdvisorPro</a></td></tr>
+      <tr><td>Foursquare</td><td><span class="s-missing">✕ Not listed</span></td><td>—</td><td><a href="https://foursquare.com/business">foursquare.com/business</a></td></tr>
+      <tr><td>Alignable</td><td><span class="s-missing">✕ Not listed</span></td><td>—</td><td><a href="https://www.alignable.com">alignable.com</a></td></tr>
+      <tr><td>Hotfrog</td><td><span class="s-missing">✕ Not listed</span></td><td>—</td><td><a href="https://www.hotfrog.com">hotfrog.com</a></td></tr>
+      <tr><td>ShowMeLocal</td><td><span class="s-missing">✕ Not listed</span></td><td>—</td><td><a href="https://www.showmelocal.com">showmelocal.com</a></td></tr>
+      <tr><td>2FindLocal</td><td><span class="s-missing">✕ Not listed</span></td><td>—</td><td><a href="https://www.2findlocal.com">2findlocal.com</a></td></tr>
+      <tr><td>NamesAndNumbers</td><td><span class="s-missing">✕ Not listed</span></td><td>—</td><td><a href="https://www.namesandnumbers.com">namesandnumbers.com</a></td></tr>
+    </tbody>
+  </table>
+  <div class="canonical-box">
+    <h4>Use this exact data for every new listing — copy and paste, do not retype</h4>
+    <div class="canonical-grid">
+      <div class="canonical-item"><label>Business Name</label><span><span class="blur-box">Summit Home Services LLC</span></span></div>
+      <div class="canonical-item"><label>Phone</label><span><span class="blur-box">(555) 847-2201</span></span></div>
+      <div class="canonical-item"><label>Address</label><span><span class="blur-box">1240 Birch Ave, Suite 12, <span class="blur-box">Riverside, CA 92501</span></span></span></div>
+      <div class="canonical-item"><label>Website</label><span><span class="blur-box">summithomeservices.com</span></span></div>
+    </div>
+    <div class="canonical-warning">Every listing must be identical to this. "W" instead of "E", a missing comma, or any abbreviation creates a new mismatch that AI tools will flag.</div>
+  </div>
+</div>
+
+<!-- 09 LOCAL LINKS -->
+<div class="section" id="links">
+  <div class="section-header"><span class="section-num">09</span><h2 class="section-title">Local Authority Links</h2></div>
+  <a class="back-btn" href="#fixlist">↓ Jump to Fix Checklist</a>
+  <p>Local links from chambers, news outlets, government directories, and universities are among the strongest trust signals for AI recommendation systems.</p>
+  <div class="alert green"><span class="alert-icon">✓</span><div class="alert-body"><div class="alert-title">Idaho Press marketplace — already listed with correct phone</div><div class="alert-text">Appears at <a href="https://www.idahopress.com/marketplace">idahopress.com/marketplace</a> showing <span class="blur-box">(555) 847-2201</span>. Canyon County's main newspaper — a strong local citation. Keep it active.</div></div></div>
+  <div class="alert green"><span class="alert-icon">✓</span><div class="alert-body"><div class="alert-title">Idaho Division of Building Safety — License PLB-C-12188 active</div><div class="alert-text">Confirm the business name on the license matches "<span class="blur-box">Summit Home Services LLC</span>" exactly. If it shows "<span class="blur-box">Summit Home Services LLC</span>" or any variant, update it. Check at: <a href="https://ibol.idaho.gov">ibol.idaho.gov</a></div></div></div>
+  <div class="link-item"><div class="link-item-header"><span class="link-item-name">Riverside Chamber of Commerce</span><span class="link-item-type">Chamber</span><span class="priority-pill pill-high" style="margin:0;">High</span></div><div class="link-item-desc">Not listed. Competitor Right Now Heating, Cooling &amp; Plumbing is a current member. Chamber listings are strong local authority signals for AI tools.</div><div class="link-item-action">→ <a href="https://www.caldwellchamber.org">caldwellchamber.org</a> → Membership → Join</div></div>
+  <div class="link-item"><div class="link-item-header"><span class="link-item-name">Canyon Chamber of Commerce</span><span class="link-item-type">Chamber</span><span class="priority-pill pill-high" style="margin:0;">High</span></div><div class="link-item-desc">Canyon County chamber covers the full Treasure Valley. A county-level chamber citation strengthens geographic authority signals.</div><div class="link-item-action">→ <a href="https://www.canyonchamber.org/membership">canyonchamber.org/membership</a></div></div>
+  <div class="link-item"><div class="link-item-header"><span class="link-item-name">City of Riverside Business Directory</span><span class="link-item-type">Government</span><span class="priority-pill pill-high" style="margin:0;">High</span></div><div class="link-item-desc">Government .gov citations carry significant weight with AI tools. Contact the city's economic development office.</div><div class="link-item-action">→ <a href="https://www.cityofcaldwell.org">cityofcaldwell.org</a> — contact economic development</div></div>
+  <div class="link-item"><div class="link-item-header"><span class="link-item-name">College of Idaho</span><span class="link-item-type">University</span><span class="priority-pill pill-medium" style="margin:0;">Medium</span></div><div class="link-item-desc">Located in Riverside — may maintain a preferred contractor or vendor list. .edu citations carry high trust.</div><div class="link-item-action">→ <a href="https://www.collegeofidaho.edu">collegeofidaho.edu</a> — contact facilities or procurement</div></div>
+</div>
+
+<!-- 10 FIX CHECKLIST -->
+<div class="section" id="fixlist">
+  <div class="section-header"><span class="section-num">10</span><h2 class="section-title">Fix Checklist</h2></div>
+  <p>Work top to bottom. High priority items have the biggest impact — complete those first before moving to medium and low.</p>
+  <ul class="checklist">
+    <li class="checklist-item"><div class="check-box"></div><div class="check-content"><div class="priority-pill pill-high">High Priority</div><div class="check-title">Fix your website phone number sitewide</div><div class="check-desc">Your homepage and contact page show <strong><span class="blur-box">(555) 847-9079</span></strong>. Correct number is <strong><span class="blur-box">(555) 847-2201</span></strong>. Your About page already has the right number — this is a partial update that was never finished. Log in to Hibu or call support and ask them to replace every instance of 276-9079 with 807-5485 across the whole site.</div><div class="check-url">→ hibu.com/contact &nbsp;·&nbsp; <span class="blur-box">summithomeservices.com</span></div></div></li>
+    <li class="checklist-item"><div class="check-box"></div><div class="check-content"><div class="priority-pill pill-high">High Priority</div><div class="check-title">Fix your BBB address — "W" should be "E"</div><div class="check-desc">BBB shows <strong><span class="blur-box">1240 Birch Ave Suite 21</span></strong>. Your address is <strong><span class="blur-box">1240 Birch Ave Suite 12</span></strong>. One wrong letter is enough for AI tools to treat these as two different locations.</div><div class="check-url">→ bbb.org/us/id/caldwell/profile/heating-and-air-conditioning/prime-plumbing-heating-cooling-1296-1000020683</div></div></li>
+    <li class="checklist-item"><div class="check-box"></div><div class="check-content"><div class="priority-pill pill-high">High Priority</div><div class="check-title">Fix YellowPages phone number</div><div class="check-desc">YellowPages shows <strong><span class="blur-box">(555) 209-7848</span></strong>. This feeds Data Axle, which pushes your info to Apple Maps, Bing, and dozens of other directories automatically. Fixing it here fixes many downstream listings.</div><div class="check-url">→ yellowpages.com/caldwell-id/mip/prime-plumbing-538489343 &nbsp;·&nbsp; yellowpages.com/manage-listing</div></div></li>
+    <li class="checklist-item"><div class="check-box"></div><div class="check-content"><div class="priority-pill pill-high">High Priority</div><div class="check-title">Fix Manta phone number</div><div class="check-desc">Manta shows <strong><span class="blur-box">(555) 944-1118</span></strong>. Claim your listing and update it to <span class="blur-box">(555) 847-2201</span>.</div><div class="check-url">→ <a href="https://www.manta.com/c/m1xwf4t/prime-plumbing">manta.com/c/m1xwf4t/prime-plumbing</a> &nbsp;·&nbsp; <a href="https://www.manta.com/claim">manta.com/claim</a></div></div></li>
+    <li class="checklist-item"><div class="check-box"></div><div class="check-content"><div class="priority-pill pill-high">High Priority</div><div class="check-title">Add schema to your website homepage</div><div class="check-desc">No LocalBusiness schema found on your website. Schema tells AI tools your exact name, address, phone, and category. Without it every AI recommendation has to guess from conflicting data — a competitor with clean schema wins. The complete code block is in Section 07. Send it to your Hibu rep and ask them to add it to the homepage head tag.</div><div class="check-url">→ See Section 07 for the ready-to-paste code block</div></div></li>
+    <li class="checklist-item"><div class="check-box"></div><div class="check-content"><div class="priority-pill pill-high">High Priority</div><div class="check-title">Create an Angi listing</div><div class="check-desc">Beacon Plumbing and Five Star Service Pros both appear in Angi's Riverside results. You don't. Angi is crawled by AI tools for home service recommendations — being absent while two direct competitors are listed is a direct disadvantage.</div><div class="check-url">→ <a href="https://pro.angi.com">pro.angi.com</a></div></div></li>
+    <li class="checklist-item"><div class="check-box"></div><div class="check-content"><div class="priority-pill pill-high">High Priority</div><div class="check-title">Claim Bing Places for Business</div><div class="check-desc">Bing Places feeds Microsoft Copilot, Cortana, and Apple Maps. If you're not claimed here, Siri has no verified location for your business. Takes about 10 minutes.</div><div class="check-url">→ <a href="https://www.bingplaces.com">bingplaces.com</a></div></div></li>
+    <li class="checklist-item"><div class="check-box"></div><div class="check-content"><div class="priority-pill pill-medium">Medium Priority</div><div class="check-title">Add your address to your Yelp listing</div><div class="check-desc">Your Yelp listing shows a service area map but no physical address. Adding it strengthens location signals for AI tools.</div><div class="check-url">→ <a href="https://biz.yelp.com">biz.yelp.com</a> → Edit business info → Add address</div></div></li>
+    <li class="checklist-item"><div class="check-box"></div><div class="check-content"><div class="priority-pill pill-medium">Medium Priority</div><div class="check-title">Add phone and address to your Facebook page</div><div class="check-desc">Facebook has no phone or address listed. It's used by AI tools as a cross-reference and feeds Apple Maps and Bing aggregators.</div><div class="check-url">→ facebook.com/602508032951775 → Edit Page Info</div></div></li>
+    <li class="checklist-item"><div class="check-box"></div><div class="check-content"><div class="priority-pill pill-medium">Medium Priority</div><div class="check-title">Add a Google Map embed to your contact page</div><div class="check-desc">No GBP map embed found on the contact page. Adding one reinforces your location signal on your own website.</div><div class="check-url">→ maps.google.com → search your business → Share → Embed a map → send iframe to Hibu</div></div></li>
+    <li class="checklist-item"><div class="check-box"></div><div class="check-content"><div class="priority-pill pill-medium">Medium Priority</div><div class="check-title">Claim Apple Maps Connect</div><div class="check-url">→ <a href="https://mapsconnect.apple.com">mapsconnect.apple.com</a></div></div></li>
+    <li class="checklist-item"><div class="check-box"></div><div class="check-content"><div class="priority-pill pill-medium">Medium Priority</div><div class="check-title">Join the Riverside Chamber of Commerce</div><div class="check-desc">Not listed — competitor Right Now Heating, Cooling &amp; Plumbing is a current member. Chamber listings are strong local authority signals for AI tools.</div><div class="check-url">→ <a href="https://www.caldwellchamber.org">caldwellchamber.org</a> → Membership → Join</div></div></li>
+    <li class="checklist-item"><div class="check-box"></div><div class="check-content"><div class="priority-pill pill-low">Low Priority</div><div class="check-title">Formally claim your Nextdoor business page</div><div class="check-desc">You're already a Neighborhood Favorite three years running. Claiming the page lets you control the NAP and post updates directly.</div><div class="check-url">→ <a href="https://www.nextdoor.com/business">nextdoor.com/business</a></div></div></li>
+    <li class="checklist-item"><div class="check-box"></div><div class="check-content"><div class="priority-pill pill-low">Low Priority</div><div class="check-title">Create secondary citation listings</div><div class="check-desc">Each adds a small citation signal. Use the canonical NAP from Section 01 for each. Platforms: Houzz · Thumbtack · HomeAdvisor · Foursquare · Alignable · Hotfrog · ShowMeLocal · 2FindLocal · NamesAndNumbers.</div></div></li>
+  </ul>
+</div>
+
+
+</div><!-- end body-content -->
+
+<div class="disclaimer">
+  <strong>Disclaimer:</strong> This audit reflects data found on the date of the report. Directory listings change — findings may no longer apply if listings have been updated since delivery. Verdant Web Solutions provides research and recommendations only; implementing fixes is the responsibility of the business. Correcting the issues identified improves the conditions for AI recommendations but does not guarantee specific placement or recommendation frequency, as those decisions are made independently by third-party platforms.
+</div>
+
+<div class="report-footer">
+  <div class="footer-brand">Verdant Web Solutions<span>, LLC</span></div>
+  <div class="footer-note">verdantweb.solutions &nbsp;·&nbsp; Post Falls, ID &nbsp;·&nbsp; March 2026 </div>
+</div>
+
+</div><!-- end page -->
+<script>
+
+// ── DOT GRID CANVAS — exact match to verdantweb.solutions
+(function(){
+  const SPACING = 40, RADIUS = 1.4;
+
+  function makeGrid(canvas, phaseOffset){
+    const ctx = canvas.getContext('2d');
+    const section = canvas.parentElement;
+    let W, H, dots, t = 0, running = false;
+
+    function init(){
+      W = canvas.width  = section.offsetWidth  || window.innerWidth;
+      H = canvas.height = section.offsetHeight || window.innerHeight;
+      dots = [];
+      const cols = Math.ceil(W/SPACING)+2, rows = Math.ceil(H/SPACING)+2;
+      for(let r=0;r<rows;r++) for(let c=0;c<cols;c++) dots.push({
+        x:c*SPACING, y:r*SPACING,
+        phase:Math.random()*Math.PI*2+phaseOffset,
+        speed:0.002+Math.random()*0.003,
+        amp:0.4+Math.random()*0.6
+      });
+      buildPairs();
+      if(!running){ running=true; draw(); }
+    }
+
+    let pairs = [];
+    function buildPairs(){
+      pairs = [];
+      const maxDist = SPACING * 2.2;
+      for(let i=0;i<dots.length;i+=4){
+        for(let j=i+1;j<dots.length;j+=4){
+          const dx=dots[i].x-dots[j].x, dy=dots[i].y-dots[j].y;
+          const dist=Math.sqrt(dx*dx+dy*dy);
+          if(dist<maxDist && pairs.length<80){
+            pairs.push({
+              a:i, b:j, dist,
+              phase: Math.random()*Math.PI*2,
+              speed: 0.003 + Math.random()*0.004,
+              maxAlpha: 0.06 + Math.random()*0.08
+            });
+          }
+        }
+      }
+    }
+
+    function draw(){
+      ctx.clearRect(0,0,W,H); t+=1;
+      pairs.forEach(p => {
+        const lineAlpha = p.maxAlpha * (0.5 + 0.5*Math.sin(t*p.speed + p.phase));
+        if(lineAlpha < 0.01) return;
+        const a = dots[p.a], b = dots[p.b];
+        const distFade = 1 - (p.dist / (SPACING*2.2));
+        ctx.strokeStyle = 'rgba(125,206,160,'+(lineAlpha*distFade).toFixed(3)+')';
+        ctx.lineWidth = 0.6;
+        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+      });
+      dots.forEach(d => {
+        const pulse = d.amp*0.5 + d.amp*0.5*Math.sin(t*d.speed+d.phase);
+        const blink = (Math.sin(t*d.speed*3.1+d.phase*2.3)>0.92) ? 1.8 : 1.0;
+        const nx=d.x/W, ny=d.y/H;
+        const wave = 0.5+0.5*Math.sin(nx*2.5+t*0.007+phaseOffset)*Math.cos(ny*1.6+t*0.005);
+        const alpha = Math.min(pulse*blink*(0.55+(ny)*0.1),1);
+        ctx.fillStyle = wave>0.5
+          ? 'rgba(125,206,160,'+(alpha*0.6).toFixed(3)+')'
+          : 'rgba(180,185,180,'+(alpha*0.2).toFixed(3)+')';
+        ctx.beginPath();
+        ctx.arc(d.x, d.y, RADIUS*(0.85+pulse*0.3), 0, Math.PI*2);
+        ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('resize', () => {
+      W = canvas.width  = section.offsetWidth  || window.innerWidth;
+      H = canvas.height = section.offsetHeight || window.innerHeight;
+    });
+    return function(){ init(); buildPairs(); };
+  }
+
+  window.addEventListener('load', function(){
+    document.querySelectorAll('.dot-canvas').forEach(function(c,i){
+      makeGrid(c, i*1.8)();
+    });
+  });
+})();
+
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.jump-nav-row a, .jump-btn').forEach(function(btn) {
+    btn.addEventListener('mousemove', function(e) {
+      var r = btn.getBoundingClientRect();
+      btn.style.setProperty('--mx', ((e.clientX - r.left) / r.width  * 100).toFixed(1) + '%');
+      btn.style.setProperty('--my', ((e.clientY - r.top)  / r.height * 100).toFixed(1) + '%');
+    });
+  });
+});
+</script>
+</body>
+</html>
